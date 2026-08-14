@@ -54,3 +54,17 @@ export interface SelectProps {
   class?: string;
   [key: string]: unknown;
 }
+
+export interface RangeProps {
+  value?: number;
+  min?: number;
+  max?: number;
+  step?: number;
+  label?: string;
+  suffix?: string;
+  oninput?: (event: Event) => void;
+  onchange?: (event: Event) => void;
+  disabled?: boolean;
+  class?: string;
+  [key: string]: unknown;
+}

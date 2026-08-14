@@ -5,9 +5,11 @@ const read = (path: string) => readFileSync(new URL(path, import.meta.url), 'utf
 const input = read('../src/Input.svelte');
 const textarea = read('../src/Textarea.svelte');
 const select = read('../src/Select.svelte');
+const range = read('../src/Range.svelte');
 const inputElement = read('../src/InputElement.svelte');
 const textareaElement = read('../src/TextareaElement.svelte');
 const selectElement = read('../src/SelectElement.svelte');
+const rangeElement = read('../src/RangeElement.svelte');
 const index = read('../src/index.ts');
 const demo = read('../index.html');
 const packageJson = JSON.parse(read('../package.json'));
@@ -37,6 +39,20 @@ describe('native field contract', () => {
     expect(input).toContain('min-block-size: 44px;');
     expect(textarea).toContain('min-block-size: 72px;');
     expect(select).toContain('min-block-size: 44px;');
+    expect(range).toContain('max-inline-size: 100%;');
+    expect(range).toContain('min-block-size: 44px;');
+    expect(range).toContain('min-inline-size: 44px;');
+    expect(range).toContain('touch-action: pan-y;');
+  });
+
+  test('keeps range semantics native and hostile values from consuming the track', () => {
+    expect(range).toContain('type="range"');
+    expect(range).toContain('bind:value');
+    expect(range).toContain("aria-label={label || 'Value'}");
+    expect(range).toContain('min-inline-size: 44px;');
+    expect(range).toContain('max-inline-size: 40%;');
+    expect(range).toContain('text-overflow: ellipsis;');
+    expect(range).toContain('@media (prefers-reduced-motion: reduce)');
   });
 });
 
@@ -49,6 +65,9 @@ describe('theme and state behavior', () => {
       expect(source).toContain('@media (prefers-reduced-motion: reduce)');
       expect(source).toContain('transition: none;');
     }
+    expect(range).toContain('var(--cockpit-border, #d8d2c8)');
+    expect(range).toContain('var(--cockpit-accent, #0f766e)');
+    expect(range).toContain('var(--cockpit-text-muted, #506058)');
     expect(select).toContain('linear-gradient(45deg, transparent 50%, currentColor 50%)');
     expect(select).not.toContain('data:image/svg+xml');
   });
@@ -71,15 +90,18 @@ describe('delivery contract', () => {
     expect(index).toContain("export { default as Input } from './Input.svelte';");
     expect(index).toContain("export { default as Textarea } from './Textarea.svelte';");
     expect(index).toContain("export { default as Select } from './Select.svelte';");
+    expect(index).toContain("export { default as Range } from './Range.svelte';");
     expect(packageJson.wornpage).toEqual({ contractVersion: 2, delivery: 'browser-bundle' });
     expect(packageJson.main).toBe('./dist/worn-form-fields.js');
     expect(demo).toContain('src="./dist/worn-form-fields.js"');
+    expect(demo).toContain('<worn-range aria-label="Progress"');
   });
 
   test('registers accessible custom elements with typed public properties', () => {
     expect(inputElement).toContain("tag: 'worn-input'");
     expect(textareaElement).toContain("tag: 'worn-textarea'");
     expect(selectElement).toContain("tag: 'worn-select'");
+    expect(rangeElement).toContain("tag: 'worn-range'");
     for (const source of [inputElement, textareaElement, selectElement]) {
       expect(source).toContain("ariaLabel: { attribute: 'aria-label'");
       expect(source).toContain("$derived(ariaLabel || host.getAttribute('aria-label') || '')");
@@ -88,5 +110,7 @@ describe('delivery contract', () => {
       expect(source).toContain('min-inline-size: 0;');
     }
     expect(selectElement).toContain("options: { type: 'Array' }");
+    expect(rangeElement).toContain("value: { reflect: true, type: 'Number' }");
+    expect(rangeElement).toContain("ariaLabel: { attribute: 'aria-label'");
   });
 });

@@ -57,6 +57,7 @@
       <label>Email<worn-input aria-label="Email" type="email" autocomplete="email" placeholder="priya@acme.com"></worn-input></label>
       <label>Context<worn-textarea aria-label="Context" rows="2" placeholder="Add context for the team."></worn-textarea></label>
       <label class="compact">Workspace<worn-select aria-label="Workspace" options='[{"value":"long","label":"An intentionally very long workspace name that must remain contained"},{"value":"short","label":"Acme"}]' value="long"></worn-select></label>
+      <label class="compact">Progress<worn-range aria-label="Progress" value="65" suffix="%"></worn-range></label>
       <label>Read only<worn-input aria-label="Read only" value="Imported from GitHub" readonly></worn-input></label>
       <label>Disabled<worn-input aria-label="Disabled" value="Managed externally" disabled></worn-input></label>
     </section>
@@ -65,7 +66,7 @@
   <script>
     const output = document.querySelector('#state');
     document.addEventListener('input', (event) => {
-      if (!event.target.matches('worn-input, worn-textarea, worn-select')) return;
+      if (!event.target.matches('worn-input, worn-textarea, worn-select, worn-range')) return;
       output.textContent = `${event.target.localName}: ${event.target.value}`;
     });
     document.addEventListener('change', (event) => {
