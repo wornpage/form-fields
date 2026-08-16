@@ -3101,6 +3101,7 @@ var Qi = /* @__PURE__ */ new Set([
 	"$$events",
 	"$$legacy",
 	"value",
+	"valueText",
 	"min",
 	"max",
 	"step",
@@ -3116,28 +3117,29 @@ var Qi = /* @__PURE__ */ new Set([
 };
 function ta(e, t) {
 	O(t, !0), Hr(e, ea);
-	let n = $(t, "value", 15, 0), r = $(t, "min", 3, 0), i = $(t, "max", 3, 100), a = $(t, "step", 3, 1), o = $(t, "label", 3, ""), s = $(t, "suffix", 3, ""), c = $(t, "disabled", 3, !1), l = $(t, "class", 3, ""), u = /* @__PURE__ */ Ti(t, Qi), d = /* @__PURE__ */ M(() => i() > r() ? Math.min(100, Math.max(0, Math.round((n() - r()) / (i() - r()) * 100))) : 0), f = /* @__PURE__ */ M(() => Math.round(Q(d) / 5) * 5), p = /* @__PURE__ */ M(() => `${n()}${s()}`);
-	var m = $i();
-	let h;
-	var g = an(m), _ = an(g);
-	_i(_, () => ({
+	let n = $(t, "value", 15, 0), r = $(t, "valueText", 3, ""), i = $(t, "min", 3, 0), a = $(t, "max", 3, 100), o = $(t, "step", 3, 1), s = $(t, "label", 3, ""), c = $(t, "suffix", 3, ""), l = $(t, "disabled", 3, !1), u = $(t, "class", 3, ""), d = /* @__PURE__ */ Ti(t, Qi), f = /* @__PURE__ */ M(() => a() > i() ? Math.min(100, Math.max(0, Math.round((n() - i()) / (a() - i()) * 100))) : 0), p = /* @__PURE__ */ M(() => Math.round(Q(f) / 5) * 5), m = /* @__PURE__ */ M(() => r() || `${n()}${c()}`);
+	var h = $i();
+	let g;
+	var _ = an(h), v = an(_);
+	_i(v, () => ({
 		class: "worn-range-input",
 		type: "range",
-		min: r(),
-		max: i(),
-		step: a(),
+		min: i(),
+		max: a(),
+		step: o(),
 		oninput: t.oninput,
 		onchange: t.onchange,
-		disabled: c(),
-		"aria-label": o() || "Value",
-		...u
+		disabled: l(),
+		"aria-label": s() || "Value",
+		"aria-valuetext": r() || void 0,
+		...d
 	}), void 0, void 0, void 0, "svelte-8d7xt8", !0);
-	var v = sn(_, 2), y = an(v);
-	Fe(v), Fe(g);
-	var b = sn(g, 2), x = an(b, !0);
-	Fe(b), Fe(m), xn(() => {
-		h = Qr(m, 1, `worn-range ${l() ?? ""}`, "svelte-8d7xt8", h, { "is-disabled": c() }), hi(m, "aria-label", o() || "Range slider"), hi(m, "aria-disabled", c()), Qr(y, 1, `worn-range-fill worn-range-fill-${Q(f) ?? ""}`, "svelte-8d7xt8"), hi(b, "title", Q(p)), wr(x, Q(p));
-	}), xi(_, n), hr(e, m), k();
+	var y = sn(v, 2), b = an(y);
+	Fe(y), Fe(_);
+	var x = sn(_, 2), S = an(x, !0);
+	Fe(x), Fe(h), xn(() => {
+		g = Qr(h, 1, `worn-range ${u() ?? ""}`, "svelte-8d7xt8", g, { "is-disabled": l() }), hi(h, "aria-label", s() || "Range slider"), hi(h, "aria-disabled", l()), Qr(b, 1, `worn-range-fill worn-range-fill-${Q(p) ?? ""}`, "svelte-8d7xt8"), hi(x, "title", Q(m)), wr(S, Q(m));
+	}), xi(v, n), hr(e, h), k();
 }
 //#endregion
 //#region src/RangeElement.svelte
@@ -3147,32 +3149,35 @@ var na = {
 };
 function ra(e, t) {
 	O(t, !0), Hr(e, na);
-	let n = $(t, "value", 7, 0), r = $(t, "min", 7, 0), i = $(t, "max", 7, 100), a = $(t, "step", 7, 1), o = $(t, "suffix", 7, ""), s = $(t, "disabled", 7, !1), c = $(t, "ariaLabel", 7, ""), l = t.$$host, u = /* @__PURE__ */ M(() => c() || l.getAttribute("aria-label") || "Value");
-	function d(e) {
+	let n = $(t, "value", 7, 0), r = $(t, "valueText", 7, ""), i = $(t, "min", 7, 0), a = $(t, "max", 7, 100), o = $(t, "step", 7, 1), s = $(t, "suffix", 7, ""), c = $(t, "disabled", 7, !1), l = $(t, "ariaLabel", 7, ""), u = t.$$host, d = /* @__PURE__ */ M(() => l() || u.getAttribute("aria-label") || "Value");
+	function f(e) {
 		let t = Number(e.currentTarget.value);
-		n(t), l.value = t;
+		n(t), u.value = t;
 	}
 	return ta(e, {
-		get min() {
+		get valueText() {
 			return r();
 		},
-		get max() {
+		get min() {
 			return i();
 		},
-		get step() {
+		get max() {
 			return a();
 		},
-		get label() {
-			return Q(u);
-		},
-		get suffix() {
+		get step() {
 			return o();
 		},
-		get disabled() {
+		get label() {
+			return Q(d);
+		},
+		get suffix() {
 			return s();
 		},
-		oninput: d,
-		onchange: d,
+		get disabled() {
+			return c();
+		},
+		oninput: f,
+		onchange: f,
 		get value() {
 			return n();
 		},
@@ -3186,41 +3191,47 @@ function ra(e, t) {
 		set value(e = 0) {
 			n(e), F();
 		},
-		get min() {
+		get valueText() {
 			return r();
 		},
-		set min(e = 0) {
+		set valueText(e = "") {
 			r(e), F();
 		},
-		get max() {
+		get min() {
 			return i();
 		},
-		set max(e = 100) {
+		set min(e = 0) {
 			i(e), F();
 		},
-		get step() {
+		get max() {
 			return a();
 		},
-		set step(e = 1) {
+		set max(e = 100) {
 			a(e), F();
 		},
-		get suffix() {
+		get step() {
 			return o();
 		},
-		set suffix(e = "") {
+		set step(e = 1) {
 			o(e), F();
 		},
-		get disabled() {
+		get suffix() {
 			return s();
 		},
-		set disabled(e = !1) {
+		set suffix(e = "") {
 			s(e), F();
 		},
-		get ariaLabel() {
+		get disabled() {
 			return c();
 		},
-		set ariaLabel(e = "") {
+		set disabled(e = !1) {
 			c(e), F();
+		},
+		get ariaLabel() {
+			return l();
+		},
+		set ariaLabel(e = "") {
+			l(e), F();
 		}
 	});
 }
@@ -3228,6 +3239,11 @@ customElements.define("worn-range", ji(ra, {
 	value: {
 		reflect: !0,
 		type: "Number"
+	},
+	valueText: {
+		attribute: "value-text",
+		reflect: !0,
+		type: "String"
 	},
 	min: {
 		reflect: !0,
