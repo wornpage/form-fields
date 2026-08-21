@@ -39,7 +39,9 @@ describe('native field contract', () => {
       expect(source).toContain('min-inline-size: 0;');
       expect(source).toContain('touch-action: manipulation;');
       expect(source).toMatch(/font-size: 14px;[\s\S]*@media \(pointer: coarse\)[\s\S]*font-size: 16px;/u);
-      expect(source).toContain(`@media (pointer: coarse) {\n    ${selector} { font-size: 16px; }\n  }`);
+      expect(source).toMatch(
+        new RegExp(`@media \\(pointer: coarse\\) \\{\\s*${selector} \\{\\s*font-size: 16px;\\s*\\}\\s*\\}`, 'u'),
+      );
     }
     expect(input).toContain('min-block-size: 44px;');
     expect(textarea).toContain('min-block-size: 72px;');
