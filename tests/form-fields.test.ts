@@ -30,13 +30,16 @@ describe('native field contract', () => {
   });
 
   test('makes each producer own its touch target and responsive containment', () => {
-    for (const source of [input, textarea, select]) {
+    for (const [source, selector] of [
+      [input, '.worn-input'],
+      [textarea, '.worn-textarea'],
+      [select, '.worn-select'],
+    ] as const) {
       expect(source).toContain('max-inline-size: 100%;');
       expect(source).toContain('min-inline-size: 0;');
       expect(source).toContain('touch-action: manipulation;');
       expect(source).toMatch(/font-size: 14px;[\s\S]*@media \(pointer: coarse\)[\s\S]*font-size: 16px;/u);
-      expect(source).toContain('@media (pointer: coarse)');
-      expect(source).toContain('font-size: 16px;');
+      expect(source).toContain(`@media (pointer: coarse) {\n    ${selector} { font-size: 16px; }\n  }`);
     }
     expect(input).toContain('min-block-size: 44px;');
     expect(textarea).toContain('min-block-size: 72px;');
