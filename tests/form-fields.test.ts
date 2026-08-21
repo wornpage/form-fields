@@ -34,6 +34,7 @@ describe('native field contract', () => {
       expect(source).toContain('max-inline-size: 100%;');
       expect(source).toContain('min-inline-size: 0;');
       expect(source).toContain('touch-action: manipulation;');
+      expect(source).toMatch(/font-size: 14px;[\s\S]*@media \(pointer: coarse\)[\s\S]*font-size: 16px;/u);
       expect(source).toContain('@media (pointer: coarse)');
       expect(source).toContain('font-size: 16px;');
     }
