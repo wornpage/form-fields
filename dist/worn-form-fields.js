@@ -3111,17 +3111,17 @@ var Qi = /* @__PURE__ */ new Set([
 	"onchange",
 	"disabled",
 	"class"
-]), $i = /* @__PURE__ */ pr("<div role=\"group\"><div class=\"worn-range-control svelte-8d7xt8\"><input/> <div class=\"worn-range-track svelte-8d7xt8\"><div></div></div></div> <span class=\"worn-range-value svelte-8d7xt8\" aria-hidden=\"true\"> </span></div>"), ea = {
+]), $i = /* @__PURE__ */ pr("<div role=\"group\"><div class=\"worn-range-control svelte-8d7xt8\"><input/> <svg class=\"worn-range-track svelte-8d7xt8\" aria-hidden=\"true\" focusable=\"false\"><rect class=\"worn-range-fill svelte-8d7xt8\" height=\"100%\"></rect></svg></div> <span class=\"worn-range-value svelte-8d7xt8\" aria-hidden=\"true\"> </span></div>"), ea = {
 	hash: "svelte-8d7xt8",
-	code: ".worn-range.svelte-8d7xt8 {box-sizing:border-box;display:flex;align-items:center;gap:8px;inline-size:100%;max-inline-size:100%;min-block-size:44px;min-inline-size:0;}.worn-range-control.svelte-8d7xt8 {box-sizing:border-box;position:relative;display:flex;flex:1 1 auto;align-items:center;min-block-size:44px;min-inline-size:44px;}.worn-range-input.svelte-8d7xt8 {position:absolute;z-index:1;inset:0;inline-size:100%;block-size:100%;margin:0;opacity:0;cursor:pointer;touch-action:pan-y;-webkit-appearance:none;appearance:none;}.worn-range-input.svelte-8d7xt8:disabled {cursor:not-allowed;}.worn-range-track.svelte-8d7xt8 {position:relative;flex:1 1 auto;min-inline-size:44px;block-size:8px;overflow:hidden;border-radius:var(--worn-range-radius, 4px);background:var(--worn-range-track, var(--cockpit-border, #d8d2c8));}.worn-range-input.svelte-8d7xt8:focus-visible + .worn-range-track:where(.svelte-8d7xt8) {outline:2px dashed var(--worn-range-focus, var(--worn-field-focus, var(--cockpit-focus, var(--cockpit-text, #21322b))));outline-offset:3px;}.worn-range-fill.svelte-8d7xt8 {block-size:100%;min-inline-size:0;border-radius:inherit;background:var(--worn-range-fill, var(--cockpit-accent, #0f766e));pointer-events:none;transition:width 0.15s ease;}.worn-range-value.svelte-8d7xt8 {flex:0 1 auto;min-inline-size:32px;max-inline-size:40%;overflow:hidden;color:var(--worn-range-value, var(--cockpit-text-muted, #506058));font-family:var(--font-typewriter, ui-monospace, SFMono-Regular, Consolas, monospace);font-size:13px;line-height:1.4;text-align:end;text-overflow:ellipsis;white-space:nowrap;user-select:none;}.worn-range.is-disabled.svelte-8d7xt8 .worn-range-track:where(.svelte-8d7xt8) {background:var(--cockpit-bg-secondary, #ece6dd);box-shadow:inset 0 0 0 1px var(--cockpit-border, #d8d2c8);}.worn-range.is-disabled.svelte-8d7xt8 .worn-range-fill:where(.svelte-8d7xt8) {background:var(--cockpit-text-muted, #506058);}.worn-range.is-disabled.svelte-8d7xt8 .worn-range-value:where(.svelte-8d7xt8) {color:var(--cockpit-text-secondary, #394b43);}.worn-range-fill-0.svelte-8d7xt8 {width:0%;}.worn-range-fill-5.svelte-8d7xt8 {width:5%;}.worn-range-fill-10.svelte-8d7xt8 {width:10%;}.worn-range-fill-15.svelte-8d7xt8 {width:15%;}.worn-range-fill-20.svelte-8d7xt8 {width:20%;}.worn-range-fill-25.svelte-8d7xt8 {width:25%;}.worn-range-fill-30.svelte-8d7xt8 {width:30%;}.worn-range-fill-35.svelte-8d7xt8 {width:35%;}.worn-range-fill-40.svelte-8d7xt8 {width:40%;}.worn-range-fill-45.svelte-8d7xt8 {width:45%;}.worn-range-fill-50.svelte-8d7xt8 {width:50%;}.worn-range-fill-55.svelte-8d7xt8 {width:55%;}.worn-range-fill-60.svelte-8d7xt8 {width:60%;}.worn-range-fill-65.svelte-8d7xt8 {width:65%;}.worn-range-fill-70.svelte-8d7xt8 {width:70%;}.worn-range-fill-75.svelte-8d7xt8 {width:75%;}.worn-range-fill-80.svelte-8d7xt8 {width:80%;}.worn-range-fill-85.svelte-8d7xt8 {width:85%;}.worn-range-fill-90.svelte-8d7xt8 {width:90%;}.worn-range-fill-95.svelte-8d7xt8 {width:95%;}.worn-range-fill-100.svelte-8d7xt8 {width:100%;}\n\n  @media (pointer: coarse) {.worn-range-input.svelte-8d7xt8 {font-size:16px;}\n  }\n\n  @media (prefers-reduced-motion: reduce) {.worn-range-fill.svelte-8d7xt8 {transition:none;}\n  }"
+	code: ".worn-range.svelte-8d7xt8 {--_worn-range-default-fill: var(--cockpit-focus, var(--cockpit-text, #21322b));box-sizing:border-box;display:flex;align-items:center;gap:8px;inline-size:100%;max-inline-size:100%;min-block-size:44px;min-inline-size:0;}.worn-range-control.svelte-8d7xt8 {box-sizing:border-box;position:relative;display:flex;flex:1 1 auto;align-items:center;min-block-size:44px;min-inline-size:44px;}.worn-range-input.svelte-8d7xt8 {position:absolute;z-index:1;inset:0;inline-size:100%;block-size:100%;margin:0;opacity:0;cursor:pointer;touch-action:pan-y;-webkit-appearance:none;appearance:none;}.worn-range-input.svelte-8d7xt8:disabled {cursor:not-allowed;}.worn-range-track.svelte-8d7xt8 {position:relative;display:block;flex:1 1 auto;inline-size:100%;min-inline-size:44px;block-size:8px;overflow:hidden;border-radius:var(--worn-range-radius, 4px);background:var(--worn-range-track, var(--cockpit-border, #d8d2c8));}.worn-range-input.svelte-8d7xt8:focus-visible + .worn-range-track:where(.svelte-8d7xt8) {outline:2px dashed var(--worn-range-focus, var(--worn-field-focus, var(--cockpit-focus, var(--cockpit-text, #21322b))));outline-offset:3px;}.worn-range-fill.svelte-8d7xt8 {fill:var(--worn-range-fill, var(--_worn-range-default-fill));pointer-events:none;transition:width 0.15s ease;}\n\n  @supports (color: color-mix(in srgb, black, white)) {.worn-range.svelte-8d7xt8 {--_worn-range-default-fill: color-mix(in srgb, var(--cockpit-accent, #0f766e) 55%, var(--cockpit-text, #21322b));}\n  }.worn-range-value.svelte-8d7xt8 {flex:0 1 auto;min-inline-size:32px;max-inline-size:40%;overflow:hidden;color:var(--worn-range-value, var(--cockpit-text-muted, #506058));font-family:var(--font-typewriter, ui-monospace, SFMono-Regular, Consolas, monospace);font-size:13px;line-height:1.4;text-align:end;text-overflow:ellipsis;white-space:nowrap;user-select:none;}.worn-range.is-disabled.svelte-8d7xt8 .worn-range-track:where(.svelte-8d7xt8) {background:var(--cockpit-bg-secondary, #ece6dd);box-shadow:inset 0 0 0 1px var(--cockpit-border, #d8d2c8);}.worn-range.is-disabled.svelte-8d7xt8 .worn-range-fill:where(.svelte-8d7xt8) {fill:var(--cockpit-text-muted, #506058);}.worn-range.is-disabled.svelte-8d7xt8 .worn-range-value:where(.svelte-8d7xt8) {color:var(--cockpit-text-secondary, #394b43);}\n\n  @media (pointer: coarse) {.worn-range-input.svelte-8d7xt8 {font-size:16px;}\n  }\n\n  @media (prefers-reduced-motion: reduce) {.worn-range-fill.svelte-8d7xt8 {transition:none;}\n  }"
 };
 function ta(e, t) {
 	O(t, !0), Hr(e, ea);
-	let n = $(t, "value", 15, 0), r = $(t, "valueText", 3, ""), i = $(t, "min", 3, 0), a = $(t, "max", 3, 100), o = $(t, "step", 3, 1), s = $(t, "label", 3, ""), c = $(t, "suffix", 3, ""), l = $(t, "disabled", 3, !1), u = $(t, "class", 3, ""), d = /* @__PURE__ */ Ti(t, Qi), f = /* @__PURE__ */ M(() => a() > i() ? Math.min(100, Math.max(0, Math.round((n() - i()) / (a() - i()) * 100))) : 0), p = /* @__PURE__ */ M(() => Math.round(Q(f) / 5) * 5), m = /* @__PURE__ */ M(() => r() || `${n()}${c()}`);
-	var h = $i();
-	let g;
-	var _ = an(h), v = an(_);
-	_i(v, () => ({
+	let n = $(t, "value", 15, 0), r = $(t, "valueText", 3, ""), i = $(t, "min", 3, 0), a = $(t, "max", 3, 100), o = $(t, "step", 3, 1), s = $(t, "label", 3, ""), c = $(t, "suffix", 3, ""), l = $(t, "disabled", 3, !1), u = $(t, "class", 3, ""), d = /* @__PURE__ */ Ti(t, Qi), f = /* @__PURE__ */ M(() => a() > i() ? Math.min(100, Math.max(0, (n() - i()) / (a() - i()) * 100)) : 0), p = /* @__PURE__ */ M(() => r() || `${n()}${c()}`);
+	var m = $i();
+	let h;
+	var g = an(m), _ = an(g);
+	_i(_, () => ({
 		class: "worn-range-input",
 		type: "range",
 		min: i(),
@@ -3134,12 +3134,12 @@ function ta(e, t) {
 		"aria-valuetext": r() || void 0,
 		...d
 	}), void 0, void 0, void 0, "svelte-8d7xt8", !0);
-	var y = sn(v, 2), b = an(y);
-	Fe(y), Fe(_);
-	var x = sn(_, 2), S = an(x, !0);
-	Fe(x), Fe(h), xn(() => {
-		g = Qr(h, 1, `worn-range ${u() ?? ""}`, "svelte-8d7xt8", g, { "is-disabled": l() }), hi(h, "aria-label", s() || "Range slider"), hi(h, "aria-disabled", l()), Qr(b, 1, `worn-range-fill worn-range-fill-${Q(p) ?? ""}`, "svelte-8d7xt8"), hi(x, "title", Q(m)), wr(S, Q(m));
-	}), xi(v, n), hr(e, h), k();
+	var v = sn(_, 2), y = an(v);
+	Fe(v), Fe(g);
+	var b = sn(g, 2), x = an(b, !0);
+	Fe(b), Fe(m), xn(() => {
+		h = Qr(m, 1, `worn-range ${u() ?? ""}`, "svelte-8d7xt8", h, { "is-disabled": l() }), hi(m, "aria-label", s() || "Range slider"), hi(m, "aria-disabled", l()), hi(y, "width", `${Q(f)}%`), hi(b, "title", Q(p)), wr(x, Q(p));
+	}), xi(_, n), hr(e, m), k();
 }
 //#endregion
 //#region src/RangeElement.svelte
