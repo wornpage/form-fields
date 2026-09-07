@@ -1,83 +1,12 @@
-# @wornpage/form-fields
+# Wornpage form-fields — historical repository
 
-> Part of **[Wornpage Components](https://github.com/wornpage/wornpage#component-library)**.
-> [Browse the catalog](https://wornpage.pages.dev) · [Setup guide](https://github.com/wornpage/wornpage/blob/main/docs/getting-started.md) · [Wornpage overview](https://github.com/wornpage/wornpage)
+Active source, documentation, and releases now live in
+[`wornpage/wornpage/packages/form-fields`](https://github.com/wornpage/wornpage/tree/main/packages/form-fields).
 
-Native Svelte 5 input, textarea, select, and range controls for the Wornpage design system.
+[Browse Components](https://wornpage-components.pages.dev) · [Installation guide](https://github.com/wornpage/wornpage/blob/main/docs/getting-started.md) · [Releases](https://github.com/wornpage/wornpage/releases)
 
-<!-- wornpage-delivery:v2 browser-bundle -->
-## Delivery
+This repository stays public to preserve exact commit archive URLs used by existing Projects and Afterlist editions. Existing branches, tags, and source history are retained.
 
-`src/` is the canonical implementation and the Svelte consumer entry. `dist/` is a generated browser bundle; run `bun run build` after source changes and never edit `dist/` directly.
+New issues, pull requests, and component changes belong in the canonical repository. The standalone release workflow has been retired.
 
-Repository text is checked out as LF through `.gitattributes`, so generated output is byte-stable across Windows and Linux.
-
-The shared [component delivery contract](https://github.com/wornpage/cli/blob/master/docs/component-delivery.md) checks this declaration, package exports, packed files, and generated output on every push and pull request.
-<!-- /wornpage-delivery -->
-
-## Svelte
-
-```svelte
-<script>
-  import { Input, Textarea, Select, Range } from '@wornpage/form-fields';
-
-  let title = $state('');
-  let context = $state('');
-  let owner = $state('priya');
-  let progress = $state(50);
-</script>
-
-<label for="project-title">Project</label>
-<Input id="project-title" bind:value={title} autocomplete="organization" />
-
-<label for="project-context">Context</label>
-<Textarea id="project-context" bind:value={context} rows={3} />
-
-<label for="project-owner">Owner</label>
-<Select
-  id="project-owner"
-  bind:value={owner}
-  options={[{ value: 'priya', label: 'Priya Shah' }]}
-/>
-
-<Range bind:value={progress} label="Progress" suffix="%" />
-```
-
-The components preserve native input, textarea, select, and range semantics. Remaining attributes are forwarded to the native control. `autocomplete` is omitted unless a consumer supplies it, so browsers and password managers are not suppressed by a component default.
-
-For mapped numeric scales, pass `valueText` to replace the visible value and set the native range's `aria-valuetext` without changing its numeric `value`, `min`, `max`, or `step` semantics.
-
-Every field owns its minimum touch size, responsive containment, focus-visible treatment, disabled/read-only states, coarse-pointer sizing, and reduced-motion behavior. The select arrow derives from `currentColor` instead of a fixed palette value. Range values remain contained without collapsing the visible track, and its native input owns keyboard behavior. The range paints the exact CSP-safe percentage with a decorative SVG, while its default fill derives from accent and text tokens to retain at least 3:1 contrast against the track across supported themes.
-
-Keyboard focus uses `--worn-field-focus`, falling back through `--worn-focus`, `--worn-text`, and `#21322b`. Set `--worn-range-focus` only when the range track needs a control-specific override.
-
-## Browser bundle
-
-```html
-<script type="module" src="./dist/worn-form-fields.js"></script>
-
-<worn-input aria-label="Project name"></worn-input>
-<worn-textarea aria-label="Context" rows="3"></worn-textarea>
-<worn-select
-  aria-label="Owner"
-  options='[{"value":"priya","label":"Priya Shah"}]'
-></worn-select>
-<worn-range aria-label="Progress" value="4" value-text="High" min="0" max="4"></worn-range>
-```
-
-The bundle registers `<worn-input>`, `<worn-textarea>`, `<worn-select>`, and `<worn-range>`. Set `aria-label` on each custom element because labels outside a shadow root cannot label the internal native control.
-
-## Theme tokens
-
-- `--worn-surface`
-- `--worn-bg-secondary`
-- `--worn-border`
-- `--worn-border-strong`
-- `--worn-text`
-- `--worn-text-secondary`
-- `--worn-text-muted`
-- `--worn-accent`
-- `--worn-accent-50`
-- `--worn-focus`
-- `--worn-radius-sm`
-- `--font-typewriter`
+See the [migration record](https://github.com/wornpage/wornpage/blob/main/docs/component-migration.md) for source ownership and compatibility requirements.
