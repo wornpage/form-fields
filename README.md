@@ -1,5 +1,8 @@
 # @wornpage/form-fields
 
+> Part of **[Wornpage Components](https://github.com/wornpage/wornpage#component-library)**.
+> [Browse the catalog](https://wornpage.pages.dev) · [Setup guide](https://github.com/wornpage/wornpage/blob/main/docs/getting-started.md) · [Wornpage overview](https://github.com/wornpage/wornpage)
+
 Native Svelte 5 input, textarea, select, and range controls for the Wornpage design system.
 
 <!-- wornpage-delivery:v2 browser-bundle -->
